@@ -1,0 +1,429 @@
+/* ===== VARIABLES ===== */
+:root {
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-orange-700: #c2410c;
+  
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-300: #86efac;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bfdbfe;
+  --color-blue-300: #93c5fd;
+  --color-blue-700: #1d4ed8;
+  --color-blue-800: #1e40af;
+  
+  --color-purple-100: #f3e8ff;
+  --color-purple-700: #7e22ce;
+  
+  --color-red-50: #fef2f2;
+  --color-red-200: #fecaca;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== GLOBAL LAYOUT ===== */
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--color-orange-50) 0%, white 50%, var(--color-green-50) 100%);
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 2rem;
+  }
+}
+
+.app-content {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-orange-600);
+}
+
+.header-title h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin: 0;
+}
+
+.header-subtitle {
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+/* ===== CONTROL PANEL ===== */
+.control-panel {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .control-panel {
+    padding: 2rem;
+  }
+}
+
+.control-section {
+  margin-bottom: 1.5rem;
+}
+
+.control-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-gray-700);
+  margin-bottom: 0.75rem;
+}
+
+.label-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-orange-600);
+}
+
+.label-icon.price-icon {
+  color: var(--color-green-600);
+}
+
+.label-icon.restriction-icon {
+  color: var(--color-red-600);
+}
+
+/* ===== BUTTON GRIDS ===== */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.option-button {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-gray-200);
+  background: white;
+  color: var(--color-gray-600);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.option-button:hover {
+  border-color: var(--color-gray-300);
+}
+
+.option-button.selected {
+  font-weight: 600;
+}
+
+.option-button.time-selected {
+  border-color: var(--color-orange-500);
+  background: var(--color-orange-50);
+  color: var(--color-orange-700);
+}
+
+.option-button.price-selected.price-budget {
+  border-color: var(--color-green-300);
+  background: var(--color-green-100);
+  color: var(--color-green-700);
+}
+
+.option-button.price-selected.price-average {
+  border-color: var(--color-blue-300);
+  background: var(--color-blue-100);
+  color: var(--color-blue-700);
+}
+
+.option-button.price-selected.price-gourmet {
+  border-color: var(--color-purple-700);
+  background: var(--color-purple-100);
+  color: var(--color-purple-700);
+}
+
+.button-icon {
+  font-size: 1.5rem;
+}
+
+.price-symbol {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ===== CHECKBOX GRID ===== */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .checkbox-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-gray-200);
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-label:hover {
+  border-color: var(--color-gray-300);
+}
+
+.checkbox-label.checked {
+  border-color: var(--color-red-500);
+  background: var(--color-red-50);
+}
+
+.checkbox-input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-red-600);
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.checkbox-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-gray-600);
+}
+
+.checkbox-label.checked .checkbox-text {
+  color: var(--color-red-700);
+}
+
+/* ===== GENERATE BUTTON ===== */
+.generate-button {
+  width: 100%;
+  background: linear-gradient(to right, var(--color-orange-500), var(--color-orange-600));
+  color: white;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.generate-button:hover:not(:disabled) {
+  background: linear-gradient(to right, var(--color-orange-600), var(--color-orange-700));
+}
+
+.generate-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.button-icon-main {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ===== ERROR DISPLAY ===== */
+.error-container {
+  background: var(--color-red-50);
+  border: 2px solid var(--color-red-200);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.error-container p {
+  color: var(--color-red-700);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ===== RESULTS ===== */
+.results-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  padding: 1.5rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  .results-container {
+    padding: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.results-emoji {
+  font-size: 1.875rem;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.menu-item {
+  border-left: 4px solid var(--color-orange-500);
+  background: var(--color-orange-50);
+  padding: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: box-shadow 0.2s ease;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.menu-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.menu-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.menu-day {
+  font-weight: 700;
+  color: var(--color-gray-800);
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.menu-badge {
+  font-size: 0.75rem;
+  background: var(--color-orange-200);
+  color: var(--color-orange-800);
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.menu-name {
+  font-weight: 600;
+  color: var(--color-orange-700);
+  margin: 0 0 0.25rem 0;
+}
+
+.menu-description {
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* ===== DEMO NOTE ===== */
+.demo-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--color-blue-50);
+  border: 1px solid var(--color-blue-200);
+  border-radius: 0.5rem;
+}
+
+.demo-note p {
+  font-size: 0.875rem;
+  color: var(--color-blue-800);
+  margin: 0;
+}
+
+.demo-note strong {
+  font-weight: 600;
+}
