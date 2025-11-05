@@ -87,7 +87,7 @@ export default async function handler(req, res) {
       },
     });
 
-    const text = responseObj.text();
+    const text = responseObj.text; // Access it as a property, not a function
     console.log('Raw Gemini response:', text.substring(0, 200) + '...');
 
     // Clean and parse JSON as in your logic
