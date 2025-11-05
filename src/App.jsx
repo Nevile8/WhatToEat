@@ -235,14 +235,7 @@ Do not include any text before or after the JSON array. Return only valid JSON.`
                   <p className="menu-name">{item.meal_name}</p>
                   <p className="menu-description">{item.simple_description}</p>
                 </div>
-              ))}
-            </div>
-            
-            {/* Demo Note */}
-            <div className="demo-note">
-              <p>
-                <strong>Demo Mode:</strong> This is a simulated response. In production, this would connect to Google Gemini, AWS Claude, or Azure GPT-4 via API to generate truly dynamic menus based on your constraints.
-              </p>
+              ))}            
             </div>
           </div>
         )}
