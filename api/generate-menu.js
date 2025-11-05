@@ -82,7 +82,7 @@ export default async function handler(req, res) {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ 
-      model: 'gemini-1.5-flash', // Fast and cost-effective
+      model: 'gemini-1.5-flash-latest', // Use 'gemini-pro' for the Generative Language API
       generationConfig: {
         temperature: 0.7,
         topK: 40,
@@ -207,5 +207,5 @@ export default async function handler(req, res) {
 
 // Export for different serverless platforms
 export const config = {
-  runtime: 'nodejs18.x', // or 'edge' for edge runtime
+  runtime: 'nodejs', // or 'edge' for edge runtime
 };
